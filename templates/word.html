@@ -74,7 +74,10 @@ height:100px;
           </button>
        </form>
    </div>
-    <h3>Meaning: {{meaning}}</h3>
+    <h3>Meaning: {%for i in meaning%}{{i}}, {%endfor%}</h3>
+<!--    <h3>Synonym and Antonym no longer supported by PyDictionary</h3>-->
+<!--    <h3>Synonym: {% for s in synonyms %}{{s}}, {% endfor %}</h3>-->
+<!--    <h3>Antonym: {%for a in antonyms %}{{a}}, {% endfor %}</h3>-->
 </div>
 </body>
 </html>

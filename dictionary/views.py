@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from PyDictionary import PyDictionary
 
+
 # Create your views here.
 
 def index(request):
@@ -12,13 +13,10 @@ def word(request):
     meaning = dictionary.meaning(search)
     synonym = dictionary.synonym(search)
     antonym = dictionary.antonym(search)
-    # if meaning.keys()=='Noun':
-    #     meaning=meaning['Noun']
-    # elif meaning.keys()=='Verb':
-    #     meaning = meaning['Verb']
+    print(synonym)
     context = {
-        'meaning': meaning,
-        'synonym': synonym,
-        'antonym': antonym
+        'meaning': meaning['Noun'],
+        'synonyms': synonym,
+        'antonyms': antonym
     }
     return render(request, 'word.html', context)
